@@ -26,8 +26,8 @@
                 </div>
                 <div class="form-group">
 <!--                     <input type="submit" name="go" value="Commencer" class="form-control btn btn-info">-->
-                    <a href="entrainement 1.html" class="form-control btn btn-info">Commencer</a> 
-                   <input type="submit" name="go" value="Commencer" class="form-control btn btn-info"> 
+                    <a href="#" id="submitButton" class="form-control btn btn-info">Commencer</a> 
+
                 </div>
             </form>
         </div>
@@ -36,6 +36,22 @@
   </div>
 </center>
 <script>
+    
+document.getElementById("submitButton").addEventListener("click", function(event) {
+  event.preventDefault(); 
+  var inputText = document.getElementById("name").value;
+  
+  if (inputText !== "") {
+    // Redirige vers une autre page avec les données saisies
+    window.location.href = "index.html";
+  } else {
+    alert("Veuillez saisir un texte avant de l'envoyer.");
+  }
+});
+
+
+
+    
     function stockname(){
         var inputNom= document.getElementById("name").value
         localStorage.setItem('nom', inputNom);
